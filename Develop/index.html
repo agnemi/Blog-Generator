@@ -9,71 +9,39 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/form.css" />
 
-    <script defer src="./assets/js/logic.js" type="text/javascript"></script>
-    <script defer src="./assets/js/form.js" type="text/javascript"></script>
+   
   </head>
 <body>
   <header>
-    <h1>My First Blog</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <button id="toggle">☀️</button>
+
   </header>
+    <aside>
+      <section>
+        <h2>My First Blog</h2>
+      </section>
+    
+    </aside>
+<main>
+  <form action='post' id="submit">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="blogs">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" placeholder="Title of your blog post">
+    <label for="content">Content</label>
+    <textarea id="content" name="content" rows ="4" cols="50" placeholder="Your blog post content goes here!"></textarea>
+    <button type="submit" id="submitBtn">Submit</button>
+    <p id="error"></p>
+  </form>
 
-  <main>
-    <section id="home">
-      <h2>Welcome to My Blog</h2>
-      <p>This is where I share my thoughts and ideas.</p>
-    </section>
+</main>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I'm a budding web developer learning HTML, CSS, and JavaScript.</p>
-      <form id="blog-form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required />
+<footer></footer>
 
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required />
-
-        <label for="content">Content:</label>
-        <textarea id="content" name="content" required></textarea>
-
-        <p id="error"></p>
-
-        <button type="submit">Submit</button>
-      </form>
-        </section>
-
-        <script>
-      document.getElementById('blog-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const username = document.getElementById('username').value;
-        const title = document.getElementById('title').value;
-        const content = document.getElementById('content').value;
-
-        if (username && title && content) {
-          const blogData = { username, title, content };
-          localStorage.setItem('blogData', JSON.stringify(blogData));
-          alert('Form data saved to local storage!');
-        } else {
-          document.getElementById('error').textContent = 'All fields are required.';
-        }
-      });
-        </script>
-
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>If you have any questions, feel free to reach out!</p>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2023 My First Blog</p>
+  <script src="./assets/js/logic.js" type="text/javascript"></script>
+  <script src="./assets/js/form.js" type="text/javascript"></script>
+  <script src="./edTestMike/landing-test.js"></script>
+</body>
   <!-- TODO: Create landing page elements to match the mock-up provided. At the very least, include the following elements. -->
 
   <!-- A form element that contains the following: -->
@@ -85,6 +53,4 @@
     <!-- A textarea element whose label and id are `content` -->
 
     <!-- A p element whose id is `error` -->
-
-</body>
 </html>
